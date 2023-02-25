@@ -1,0 +1,442 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: aqua;
+}
+
+#first-main-div-id {
+    background-color: aqua;
+    width: 30%;
+    margin-left: 30%;
+    height: 80vh;
+    border: 1px solid rgba(0, 0, 0, 0.407);
+    margin-top: 5%;
+    transition: 0.3s;
+}
+
+#first-main-div-id:hover {
+    animation-name: for-first-main-div;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+}
+
+
+@keyframes for-first-main-div {
+    0% {
+        transition: none;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
+    25% {
+        transition: 0.3s;
+        border-radius: 3px;
+        box-shadow: 10px -10px 10px rgba(255, 0, 0, 0.607);
+    }
+
+    50% {
+        transition: 0.6s;
+        border-radius: 6px;
+        box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.607);
+    }
+
+    75% {
+        transition: 0.9s;
+        border-radius: px;
+        box-shadow: -10px 10px 10px rgba(255, 0, 0, 0.607);
+    }
+
+    100% {
+        transition: 0.12s;
+        border-radius: 10px;
+        box-shadow: -10px -10px 10px rgba(255, 0, 0, 0.607);
+    }
+
+}
+
+
+#second-div-id {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    align-items: center;
+}
+
+#third-div-id {
+    /* background-color: blueviolet; */
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#forth-div-id {
+    /* background-color: aqua; */
+    width: auto;
+}
+
+#name-input-id {
+    font-size: large;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 5vh;
+    border-radius: 6px;
+    color: red;
+}
+
+#name-input-id:hover {
+    background-color: rgb(184, 182, 182);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+#name-input-id::placeholder {
+    color: red;
+    transition: 0.3s;
+}
+
+#start-quiz-button-id {
+    font-size: large;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 5vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-quiz-button-id:hover {
+    border-radius: 10px;
+    background-color: rgb(183, 183, 183);
+    color: white;
+    transition: 0.3s;
+}
+
+@keyframes loading {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        padding: 10px;
+    }
+
+}
+
+#animation-div {
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    border: 1px dashed black;
+    margin-left: 52%;
+    margin-top: 25%;
+    animation-name: loading;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 3;
+    display: none;
+}
+
+#second-main-div-fifth-div-id {
+    background-color: rgb(255, 145, 145);
+    margin: 20px;
+    width: 50%;
+    height: auto;
+    margin-left: 20%;
+    border-radius: 20px;
+    display: none;
+}
+
+#seventh-div-id {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#third-span-id-for-options {
+    background-color: rgb(204, 203, 203);
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#sixth-div-id {
+    /* background-color: rgb(255, 180, 180); */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    /* border-radius: 10px; */
+}
+
+#first-span-id-for-questions1 {
+    background-color: rgb(204, 203, 203);
+    padding: 50px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+#timer-div-id {
+    background-color: rgb(204, 203, 203);
+    width: 56%;
+    display: flex;
+    justify-content: center;
+    margin-left: 22.6%;
+    border-radius: 10px;
+}
+
+.p-class-for-options {
+    background-color: rgb(102, 153, 153);
+    /* padding: 20px; */
+    margin: 10px;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 600;
+}
+
+.p-class-for-options:hover {
+    background-color: rgb(131, 150, 150);
+    transition: 0.2s;
+    border-radius: 10px;
+    color: blue;
+}
+
+@keyframes timer {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+#h3-timer-id1 {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 100%;
+    border-style: dashed;
+    animation-name: timer;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+#h3-timer-id2 {
+    padding: 6px;
+    position: absolute;
+
+}
+
+.h4-questions-class {
+    border: 2px solid gray;
+    border-radius: 6px;
+    background-color: bisque;
+    font-size: large;
+    font-weight: 600;
+}
+
+#next-btn-div-id {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-left: 70%;
+}
+
+#nxt-btn-id {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(124, 101, 101);
+    font-size: large;
+    font-weight: 600;
+    display: none;
+}
+
+#nxt-btn-id:hover {
+    background-color: rgb(120, 118, 118);
+    transition: 0.2s;
+    color: white;
+    border-radius: 15px;
+}
+
+#tick-bold-tag-id {
+    /* margin-left: 37%; */
+    border: 2px solid green;
+    color: green;
+    background-color: rgba(82, 184, 82, 0.999);
+}
+
+#wrong-bold-tag-id1 {
+    /* margin-left: 52%; */
+    color: red;
+    background-color: rgba(208, 128, 128, 0.952);
+}
+
+#wrong-bold-tag-id2 {
+    /* margin-left: 60%; */
+    color: red;
+    background-color: rgba(208, 128, 128, 0.952);
+
+}
+
+#wrong-bold-tag-id3 {
+    color: red;
+    /* margin-left: 20px; */
+    background-color: rgba(208, 128, 128, 0.952);
+}
+
+.bold-tag-class-for-check {
+    background-color: aqua;
+    width: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 60%;
+    /* visibility: hidden; */
+    /* justify-content: center; */
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.check {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.removeEvent {
+    pointer-events: none;
+}
+
+#third-main-div-eighth-div {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    width: auto;
+    display: none;
+}
+
+#nine-div-for-result {
+    text-align: center;
+    background-color: aqua;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+}
+
+#h4-id1-for-result {
+    font-size: larger;
+    font-variant-caps: all-petite-caps;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+}
+
+#h2-id1-for-result {
+    font-size: larger;
+    font-weight: 900;
+    font-variant: small-caps;
+}
+
+#btn-id1-for-reload {
+    padding: 8px;
+    background-color: rgba(128, 128, 128, 0.751);
+    border-radius: 6px;
+    font-size: larger;
+    font-weight: 500;
+    border: 1px solid rgba(128, 128, 128, 0.751);
+}
+
+#btn-id1-for-reload:hover {
+    background-color: rgb(138, 129, 129);
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+
+#div-for-options1 {
+    background-color: rgb(204, 203, 203);
+    width: auto;
+    height: auto;
+    padding: 20px;
+    /* margin-right: 10%; */
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#div-for-options2 {
+    /* background-color: aqua; */
+    padding: 50px;
+}
+
+.div-class-for-options {
+    background-color: rgb(204, 203, 203);
+    padding: 6px;
+    margin: 10px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.304);
+    font-size: large;
+    font-weight: 600;
+}
+
+.div-class-for-options:hover {
+    border-radius: 15px;
+    transition: 0.3s;
+    background-color: rgba(156, 156, 156, 0.685);
+}
+
+.bold-tag-for-check-class {
+    margin-left: 10px;
+    /* background-color: rgba(255, 0, 0, 0.934); */
+    /* background-color: rgba(0, 128, 0, 0.934); */
+    width: 20px;
+    padding: 10px;
+    /* border: 2px solid rgba(53, 53, 53, 0.782); */
+    border: 2px solid black;
+    border-radius: 60%;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    margin: 5px;
+    color: black;
+}
+
+.bold-tag-for-option-class {
+    display: flex;
+    align-items: center;
+}
