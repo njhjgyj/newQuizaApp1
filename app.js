@@ -5,7 +5,7 @@ let quizObject = [
 
     {
 
-        Questions1: " Q1: What is the value of result? ",
+        Questions1: " Q: What is the value of result? ",
         Questions2: " const array = [1, 2, 3]; ",
         Questions3: " const result = array[3]; ",
         Answers1: " a)    undefined  ",
@@ -22,7 +22,7 @@ let quizObject = [
 
     {
 
-        Questions1: " Q2: What is the value of result? ",
+        Questions1: " Q: What is the value of result? ",
         Questions2: " const obj = Object.assign({name: 'JavaScript'}, {name: 'ECMAScript'}, {name: 'LiveScript'}); ",
         Questions3: " const result = obj.name; ",
         Answers1: " c)    LiveScript  ",
@@ -38,7 +38,7 @@ let quizObject = [
 
     {
 
-        Questions1: " Q3: What is the value of result? ",
+        Questions1: " Q: What is the value of result? ",
         Questions2: " const array = [1, 2, 3, 5]; ",
         Questions3: " const result = array.indexOf(3); ",
         Answers1: " d)    2  ",
@@ -55,7 +55,7 @@ let quizObject = [
 
     {
 
-        Questions1: " Q4: Which of these is the same as result += value? ",
+        Questions1: " Q: Which of these is the same as result += value? ",
         Answers1: " d)    result = result + value  ",
         Answers2: " &#10003 ",    // correct
         Answers3: " &#10007 ",    // wrong
@@ -69,7 +69,7 @@ let quizObject = [
 
     {
 
-        Questions1: ` Q5: What is the value of result <br> const obj = {
+        Questions1: ` Q: What is the value of result <br> const obj = {
             name: "Brendan"
         }; `,
         Questions2: " const s = JSON.parse(JSON.stringify(obj)); ",
@@ -121,6 +121,21 @@ let time2 = 20;
 let count1 = 0;
 
 
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
+
 getInpId.addEventListener("input", () => {
 
     if (getInpId.value.trim().length > 2) {
@@ -151,6 +166,9 @@ getBtnId.addEventListener("click", () => {
 
     }, 12100);
 
+    // Used like so
+    shuffle(quizObject);
+
 
     forQuestionsAndAnswers();
 
@@ -171,6 +189,7 @@ getBtnId.addEventListener("click", () => {
         elem.msRequestFullscreen();
 
     };
+
 
 });
 
@@ -195,6 +214,8 @@ if (window.performance.navigation.type == 1 && sessionStorage.key(1) && count1 =
 
         alert(" Welcome back " + sessionStorage.getItem(" User Name "));
 
+        shuffle(quizObject);
+
         forTime();
 
         forSetTimeOutAndClearInterval();
@@ -202,6 +223,12 @@ if (window.performance.navigation.type == 1 && sessionStorage.key(1) && count1 =
         forQuestionsAndAnswers();
 
     }, 12100);
+
+    window.onbeforeunload = function () {
+
+        return "Are you sure you want reload that page";
+
+    };
 
 }
 
@@ -234,8 +261,6 @@ function forSetTimeOutAndClearInterval() {
 
         };
 
-        getOptionsClassForTimer[0].style.backgroundColor = "green";
-
         getNxtBtnForTimer.style.display = "block";
 
     }, 20000);
@@ -263,6 +288,7 @@ function forQuestionsAndAnswers() {
 };
 
 
+
 let setTimeOut2;
 let setTimeOut3;
 let setTimeOut4;
@@ -274,11 +300,19 @@ let getResultDiv = document.getElementById("third-main-div-eighth-div");
 let getH4TagForResult = document.getElementById("h4-id1-for-result");
 let getH2TagForResult = document.getElementById("h2-id1-for-result");
 
+let getH3TimerIdForAnimation = document.getElementById("h3-timer-id1");
+
+
 function forNxtClick() {
     getNxtBtnForNxtClick.addEventListener("click", () => {
 
         count1++;
+
+
         console.log(" This is count1 " + count1);
+
+        getH3TimerIdForAnimation.style.animationDuration = "5s";
+        getH3TimerIdForAnimation.style.animationIterationCount = "infinite";
 
         if (count1 < quizObject.length) {
 
@@ -358,8 +392,6 @@ function forNxtClick() {
 
                 };
 
-                getOptionsClassForTimer[2].style.backgroundColor = "green";
-
                 getNxtBtnForTimer.style.display = "block";
 
             }, 20000);
@@ -380,8 +412,6 @@ function forNxtClick() {
                     getOptionsClassForTimer[i].classList.add("removeEvent");
 
                 };
-
-                getOptionsClassForTimer[3].style.backgroundColor = "green";
 
                 getNxtBtnForTimer.style.display = "block";
 
@@ -409,8 +439,6 @@ function forNxtClick() {
 
                 };
 
-                getOptionsClassForTimer[3].style.backgroundColor = "green";
-
                 getNxtBtnForTimer.style.display = "block";
 
                 setTimeout(() => {
@@ -437,8 +465,6 @@ function forNxtClick() {
 
                 };
 
-                getOptionsClassForTimer[1].style.backgroundColor = "green";
-
                 getNxtBtnForTimer.style.display = "block";
 
                 setTimeout(() => {
@@ -454,7 +480,6 @@ function forNxtClick() {
 
                 }, 20000);
 
-
             }, 20000);
 
 
@@ -462,11 +487,8 @@ function forNxtClick() {
         };
 
         for (let i = 0; i < getOptionsClass.length; i++) {
-
-            getOptionsClass[i].style.backgroundColor = "rgb(102, 153, 153)";
-
             getOptionsClass[i].lastChild.previousSibling.style.visibility = "hidden";
-            getOptionsClass[i].style.backgroundColor = "rgb(204, 203, 203)";
+            getOptionsClass[i].style.backgroundColor = "inherit";
 
         };
 
@@ -486,18 +508,15 @@ let getBoldTagClass = document.getElementsByClassName("bold-tag-for-check-class"
 let getNxtBtn = document.getElementById("nxt-btn-id");
 
 function optionsFunction(optionsSelect) {
-
-    // console.log(" this is optionsFunction " + optionsSelect.lastChild.nextSibling.textContent);
     console.log(" this is optionsFunction " + optionsSelect.lastChild.previousSibling.textContent);
 
     for (let i = 0; i < getOptionsClass.length; i++) {
 
         getOptionsClass[i].classList.add("removeEvent");
-
-        // console.log(getOptionsClass[i].firstChild.nextSibling.textContent);
-        // console.log(getOptionsClass[i].lastChild.previousSibling.textContent);
-
     };
+
+    getH3TimerIdForAnimation.style.animationDuration = "0.2s";
+    getH3TimerIdForAnimation.style.animationIterationCount = "0.2s";
 
     getNxtBtn.style.display = "block";
 
@@ -559,6 +578,3 @@ for (let k = 0; k < getOptionsClass.length; k++) {
     getOptionsClass[k].addEventListener("click", foo3);
 
 };
-
-
-// let getBtnIdForRetry = document.getElementById("btn-id1-for-reload");
