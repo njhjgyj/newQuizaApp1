@@ -8,7 +8,6 @@ body {
 }
 
 #first-main-div-id {
-    background-color: aqua;
     width: 30%;
     margin-left: 30%;
     height: 80vh;
@@ -61,7 +60,6 @@ body {
 
 
 #second-div-id {
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
     height: 30vh;
@@ -69,7 +67,6 @@ body {
 }
 
 #third-div-id {
-    /* background-color: blueviolet; */
     height: 50vh;
     text-align: center;
     display: flex;
@@ -78,7 +75,6 @@ body {
 }
 
 #forth-div-id {
-    /* background-color: aqua; */
     width: auto;
 }
 
@@ -92,7 +88,6 @@ body {
 }
 
 #name-input-id:hover {
-    background-color: rgb(184, 182, 182);
     transition: 0.3s;
     border-radius: 10px;
 }
@@ -147,7 +142,6 @@ body {
 }
 
 #second-main-div-fifth-div-id {
-    background-color: rgb(255, 145, 145);
     margin: 20px;
     width: 50%;
     height: auto;
@@ -161,12 +155,10 @@ body {
     align-items: center;
     width: auto;
     height: auto;
-    display: flex;
     justify-content: center;
 }
 
 #third-span-id-for-options {
-    background-color: rgb(204, 203, 203);
     width: auto;
     height: auto;
     padding: 20px;
@@ -177,15 +169,12 @@ body {
 }
 
 #sixth-div-id {
-    /* background-color: rgb(255, 180, 180); */
     display: flex;
     justify-content: center;
     padding: 20px;
-    /* border-radius: 10px; */
 }
 
 #first-span-id-for-questions1 {
-    background-color: rgb(204, 203, 203);
     padding: 50px;
     width: auto;
     height: auto;
@@ -193,31 +182,11 @@ body {
 }
 
 #timer-div-id {
-    background-color: rgb(204, 203, 203);
     width: 56%;
     display: flex;
     justify-content: center;
     margin-left: 22.6%;
     border-radius: 10px;
-}
-
-.p-class-for-options {
-    background-color: rgb(102, 153, 153);
-    /* padding: 20px; */
-    margin: 10px;
-    width: auto;
-    height: auto;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: large;
-    font-weight: 600;
-}
-
-.p-class-for-options:hover {
-    background-color: rgb(131, 150, 150);
-    transition: 0.2s;
-    border-radius: 10px;
-    color: blue;
 }
 
 @keyframes timer {
@@ -253,7 +222,7 @@ body {
 .h4-questions-class {
     border: 2px solid gray;
     border-radius: 6px;
-    background-color: bisque;
+    padding: 10px;
     font-size: large;
     font-weight: 600;
 }
@@ -284,20 +253,17 @@ body {
 }
 
 #tick-bold-tag-id {
-    /* margin-left: 37%; */
     border: 2px solid green;
     color: green;
     background-color: rgba(82, 184, 82, 0.999);
 }
 
 #wrong-bold-tag-id1 {
-    /* margin-left: 52%; */
     color: red;
     background-color: rgba(208, 128, 128, 0.952);
 }
 
 #wrong-bold-tag-id2 {
-    /* margin-left: 60%; */
     color: red;
     background-color: rgba(208, 128, 128, 0.952);
 
@@ -305,7 +271,6 @@ body {
 
 #wrong-bold-tag-id3 {
     color: red;
-    /* margin-left: 20px; */
     background-color: rgba(208, 128, 128, 0.952);
 }
 
@@ -316,9 +281,6 @@ body {
     background-color: transparent;
     border: 2px solid red;
     border-radius: 60%;
-    /* visibility: hidden; */
-    /* justify-content: center; */
-
     display: flex;
     justify-content: center;
 
@@ -337,7 +299,6 @@ body {
 }
 
 #third-main-div-eighth-div {
-    background-color: red;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -348,7 +309,6 @@ body {
 
 #nine-div-for-result {
     text-align: center;
-    background-color: aqua;
     width: auto;
     height: auto;
     border-radius: 6px;
@@ -386,25 +346,20 @@ body {
 
 
 #div-for-options1 {
-    background-color: rgb(204, 203, 203);
     width: auto;
     height: auto;
     padding: 20px;
-    /* margin-right: 10%; */
-    margin-bottom: 20px;
     border-radius: 10px;
 }
 
 #div-for-options2 {
-    /* background-color: aqua; */
     padding: 50px;
 }
 
 .div-class-for-options {
-    background-color: rgb(204, 203, 203);
     padding: 6px;
     margin: 10px;
-    width: auto;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -422,11 +377,8 @@ body {
 
 .bold-tag-for-check-class {
     margin-left: 10px;
-    /* background-color: rgba(255, 0, 0, 0.934); */
-    /* background-color: rgba(0, 128, 0, 0.934); */
     width: 20px;
     padding: 10px;
-    /* border: 2px solid rgba(53, 53, 53, 0.782); */
     border: 2px solid black;
     border-radius: 60%;
     display: flex;
