@@ -157,9 +157,9 @@ function shuffle(array) {
 // });
 
 
-function inputFunc() {
+function inputFunc(input1) {
 
-if (getInpId.value.trim().length > 2) {
+if (input1.value.trim().length > 2) {
         getBtnId.disabled = false;
      } else {
          getBtnId.disabled = true;
