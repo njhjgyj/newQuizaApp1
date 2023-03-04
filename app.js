@@ -146,26 +146,26 @@ function shuffle(array) {
 }
 
 
-// getInpId.addEventListener("input", () => {
+ getInpId.addEventListener("input", () => {
 
-//     if (getInpId.value.trim().length > 2) {
-//         getBtnId.disabled = false;
-//     } else {
-//         getBtnId.disabled = true;
-//     };
-
-// });
-
-
-function inputFunc(input1) {
-
-if (input1.value.trim().length > 2) {
-        getBtnId.disabled = false;
+     if (getInpId.value.trim().length > 2) {
+         getBtnId.disabled = false;
      } else {
          getBtnId.disabled = true;
      };
 
-};
+ });
+
+
+// function inputFunc(input1) {
+
+// if (input1.value.trim().length > 2) {
+//         getBtnId.disabled = false;
+//      } else {
+//          getBtnId.disabled = true;
+//      };
+
+// };
 
 
 
