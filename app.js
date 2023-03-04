@@ -172,60 +172,121 @@ if (getInpId.value.trim().length > 2) {
 
 var elem = document.documentElement;
 
-getBtnId.addEventListener("click", () => {
+// getBtnId.addEventListener("click", () => {
 
-    getMainDivId1.style.display = "none";
+//     getMainDivId1.style.display = "none";
     // getAnimationDiv.style.display = "block";
-    getAnimAndRefDiv.style.display = "flex";
+//     getAnimAndRefDiv.style.display = "flex";
 
-    alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
+//     alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
 
-    setInterval(() => {
+//     setInterval(() => {
 
-        timeForRef--;
+//         timeForRef--;
 
-        getrefDivId.innerHTML = timeForRef;
+//         getrefDivId.innerHTML = timeForRef;
 
-    }, 1000);
+//     }, 1000);
 
-    setTimeout(() => {
+//     setTimeout(() => {
 
-        getAnimAndRefDiv.style.display = "none";
-        getMainDivId2.style.display = "block";
+//         getAnimAndRefDiv.style.display = "none";
+//         getMainDivId2.style.display = "block";
 
-        forTime();
+//         forTime();
 
-        forSetTimeOutAndClearInterval();
+//         forSetTimeOutAndClearInterval();
 
     // }, 12100);
-    }, 120000);
+//     }, 120000);
 
 
     // Used like so
-    shuffle(quizObject);
+//     shuffle(quizObject);
 
 
-    forQuestionsAndAnswers();
+//     forQuestionsAndAnswers();
 
 
-    sessionStorage.setItem(" User Name ", getInpId.value.trim());
-    console.log(sessionStorage.getItem(" User Name "));
+//     sessionStorage.setItem(" User Name ", getInpId.value.trim());
+//     console.log(sessionStorage.getItem(" User Name "));
 
-    if (elem.requestFullscreen) {
+//     if (elem.requestFullscreen) {
 
-        elem.requestFullscreen();
+//         elem.requestFullscreen();
 
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
+//     } else if (elem.webkitRequestFullscreen) { /* Safari */
 
-        elem.webkitRequestFullscreen();
+//         elem.webkitRequestFullscreen();
 
-    } else if (elem.msRequestFullscreen) { /* IE11 */
+//     } else if (elem.msRequestFullscreen) { /* IE11 */
 
-        elem.msRequestFullscreen();
+//         elem.msRequestFullscreen();
 
-    };
+//     };
 
-});
+// });
+
+
+
+
+function btnForStartQuiz() {
+
+getMainDivId1.style.display = "none";
+    // getAnimationDiv.style.display = "block";
+     getAnimAndRefDiv.style.display = "flex";
+
+     alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
+
+     setInterval(() => {
+
+         timeForRef--;
+
+         getrefDivId.innerHTML = timeForRef;
+
+     }, 1000);
+
+     setTimeout(() => {
+
+         getAnimAndRefDiv.style.display = "none";
+         getMainDivId2.style.display = "block";
+
+         forTime();
+
+         forSetTimeOutAndClearInterval();
+
+    // }, 12100);
+     }, 120000);
+
+
+    // Used like so
+     shuffle(quizObject);
+
+
+     forQuestionsAndAnswers();
+
+
+     sessionStorage.setItem(" User Name ", getInpId.value.trim());
+     console.log(sessionStorage.getItem(" User Name "));
+
+     if (elem.requestFullscreen) {
+
+         elem.requestFullscreen();
+
+     } else if (elem.webkitRequestFullscreen) { /* Safari */
+
+         elem.webkitRequestFullscreen();
+
+     } else if (elem.msRequestFullscreen) { /* IE11 */
+
+         elem.msRequestFullscreen();
+
+     };
+
+ });
+
+};
+
 
 
 
