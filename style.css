@@ -146,7 +146,7 @@ body {
     animation-name: loading;
     animation-duration: 4s;
     animation-timing-function: linear;
-    animation-iteration-count: 3;
+    animation-iteration-count: infinite;
     /* display: none; */
 }
 
@@ -467,5 +467,4 @@ body {
     font-size: large;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
-
 }
