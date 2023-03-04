@@ -1,7 +1,7 @@
 "use strict";
 
 
-var quizObject = [
+let quizObject = [
 
     {
 
@@ -91,44 +91,44 @@ var quizObject = [
 ];
 
 
-var getInpId = document.getElementById("name-input-id");
-var getBtnId = document.getElementById("start-quiz-button-id");
-var getMainDivId1 = document.getElementById("first-main-div-id");
-var getMainDivId2 = document.getElementById("second-main-div-fifth-div-id")
-var getAnimationDiv = document.getElementById("animation-div");
+let getInpId = document.getElementById("name-input-id");
+let getBtnId = document.getElementById("start-quiz-button-id");
+let getMainDivId1 = document.getElementById("first-main-div-id");
+let getMainDivId2 = document.getElementById("second-main-div-fifth-div-id")
+let getAnimationDiv = document.getElementById("animation-div");
 
-var getH2QuestionId1 = document.getElementById("h2-question-id");
+let getH2QuestionId1 = document.getElementById("h2-question-id");
 
-var getH4QuestionId2 = document.getElementById("h4-question-id1");
+let getH4QuestionId2 = document.getElementById("h4-question-id1");
 
-var getH4QuestionId3 = document.getElementById("h4-question-id2");
+let getH4QuestionId3 = document.getElementById("h4-question-id2");
 
-var getH4QuestionClass1 = document.getElementsByClassName("h4-questions-class");
+let getH4QuestionClass1 = document.getElementsByClassName("h4-questions-class");
 
 
-var getOptionsClassForTimer = document.getElementsByClassName("div-class-for-options");
+let getOptionsClassForTimer = document.getElementsByClassName("div-class-for-options");
 
-var getBoldTagClassForTimer = document.getElementsByClassName("bold-tag-for-check-class");
+let getBoldTagClassForTimer = document.getElementsByClassName("bold-tag-for-check-class");
 
-var getNxtBtnForTimer = document.getElementById("nxt-btn-id");
+let getNxtBtnForTimer = document.getElementById("nxt-btn-id");
 
-var getNxtBtnForNxtClick = document.getElementById("nxt-btn-id");
+let getNxtBtnForNxtClick = document.getElementById("nxt-btn-id");
 
-var getTimerId = document.getElementById("h3-timer-id2");
+let getTimerId = document.getElementById("h3-timer-id2");
 
-var time1;
+let time1;
 
-var time2 = 20;
+let time2 = 20;
 
-var count1 = 0;
+let count1 = 0;
 
-var newTime1;
+let newTime1;
 
-var newTime2 = 120;
+let newTime2 = 120;
 
 
 function shuffle(array) {
-    var currentIndex = array.length, randomIndex;
+    let currentIndex = array.length, randomIndex;
 
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
@@ -146,156 +146,81 @@ function shuffle(array) {
 }
 
 
- getInpId.addEventListener("input", () => {
+getInpId.addEventListener("input", () => {
 
-     if (getInpId.value.trim().length > 2) {
-         getBtnId.disabled = false;
-     } else {
-         getBtnId.disabled = true;
-     };
+    if (getInpId.value.trim().length > 2) {
+        getBtnId.disabled = false;
+    } else {
+        getBtnId.disabled = true;
+    };
 
- });
+});
 
+let elem = document.documentElement;
 
-// function inputFunc(input1) {
+getBtnId.addEventListener("click", () => {
 
-// if (input1.value.trim().length > 2) {
-//         getBtnId.disabled = false;
-//      } else {
-//          getBtnId.disabled = true;
-//      };
-
-// };
-
-
-
-
-var elem = document.documentElement;
-
- getBtnId.addEventListener("click", () => {
-
-     getMainDivId1.style.display = "none";
+    getMainDivId1.style.display = "none";
     // getAnimationDiv.style.display = "block";
-     getAnimAndRefDiv.style.display = "flex";
+    getAnimAndRefDiv.style.display = "flex";
 
-     alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
+    alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
 
-     setInterval(() => {
+    setInterval(() => {
 
-         timeForRef--;
+        timeForRef--;
 
-         getrefDivId.innerHTML = timeForRef;
+        getrefDivId.innerHTML = timeForRef;
 
-     }, 1000);
+    }, 1000);
 
-     setTimeout(() => {
+    setTimeout(() => {
 
-         getAnimAndRefDiv.style.display = "none";
-         getMainDivId2.style.display = "block";
+        getAnimAndRefDiv.style.display = "none";
+        getMainDivId2.style.display = "block";
 
-         forTime();
+        forTime();
 
-         forSetTimeOutAndClearInterval();
+        forSetTimeOutAndClearInterval();
 
     // }, 12100);
-     }, 120000);
+    }, 120000);
 
 
     // Used like so
-     shuffle(quizObject);
+    shuffle(quizObject);
 
 
-     forQuestionsAndAnswers();
+    forQuestionsAndAnswers();
 
 
-     sessionStorage.setItem(" User Name ", getInpId.value.trim());
-     console.log(sessionStorage.getItem(" User Name "));
+    sessionStorage.setItem(" User Name ", getInpId.value.trim());
+    console.log(sessionStorage.getItem(" User Name "));
 
-     if (elem.requestFullscreen) {
+    if (elem.requestFullscreen) {
 
-         elem.requestFullscreen();
+        elem.requestFullscreen();
 
-     } else if (elem.webkitRequestFullscreen) { /* Safari */
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
 
-         elem.webkitRequestFullscreen();
+        elem.webkitRequestFullscreen();
 
-     } else if (elem.msRequestFullscreen) { /* IE11 */
+    } else if (elem.msRequestFullscreen) { /* IE11 */
 
-         elem.msRequestFullscreen();
+        elem.msRequestFullscreen();
 
-     };
+    };
 
- });
-
-
-
-
-// function btnForStartQuiz() {
-
-// getMainDivId1.style.display = "none";
-    // getAnimationDiv.style.display = "block";
-//      getAnimAndRefDiv.style.display = "flex";
-
-//      alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
-
-//      setInterval(() => {
-
-//          timeForRef--;
-
-//          getrefDivId.innerHTML = timeForRef;
-
-     }, 1000);
-// 
-//      setTimeout(() => {
-
-//          getAnimAndRefDiv.style.display = "none";
-//          getMainDivId2.style.display = "block";
-
-//          forTime();
-
-//          forSetTimeOutAndClearInterval();
-
-    // }, 12100);
-//      }, 120000);
-
-
-    // Used like so
-//      shuffle(quizObject);
-
-
-//      forQuestionsAndAnswers();
-
-
-//      sessionStorage.setItem(" User Name ", getInpId.value.trim());
-//      console.log(sessionStorage.getItem(" User Name "));
-
-//      if (elem.requestFullscreen) {
-
-//          elem.requestFullscreen();
-
-//      } else if (elem.webkitRequestFullscreen) { /* Safari */
-
-//          elem.webkitRequestFullscreen();
-
-//      } else if (elem.msRequestFullscreen) { /* IE11 */
-
-//          elem.msRequestFullscreen();
-
-//      };
-
-//  });
-
-// };
+});
 
 
 
 
+let getAnimAndRefDiv = document.getElementById("div-for-animation-and-refresh-id");
 
-var getAnimAndRefDiv = document.getElementById("div-for-animation-and-refresh-id");
+let getrefDivId = document.getElementById("refresh-div-id");
 
-var getrefDivId = document.getElementById("refresh-div-id");
-
-var timeForRef = 120;
+let timeForRef = 120;
 
 function forRefresh() {
 
@@ -384,9 +309,9 @@ function forRefresh() {
 
 
 
-var getResultDivForIfUserMinimizeScreen = document.getElementById("third-main-div-eighth-div");
+let getResultDivForIfUserMinimizeScreen = document.getElementById("third-main-div-eighth-div");
 
-var setTimeoutForIfUserResfreshPage;
+let setTimeoutForIfUserResfreshPage;
 
 console.log(window.performance.navigation);    //PerformanceNavigation {type: 1, redirectCount: 0}
 
@@ -405,7 +330,7 @@ function forTime() {
 };
 
 
-var setTimeOut1;
+let setTimeOut1;
 
 function forSetTimeOutAndClearInterval() {
 
@@ -427,7 +352,7 @@ function forSetTimeOutAndClearInterval() {
 
 };
 
-var getBoldTagClassForOptions = document.getElementsByClassName("bold-tag-for-option-class");
+let getBoldTagClassForOptions = document.getElementsByClassName("bold-tag-for-option-class");
 
 
 function forQuestionsAndAnswers() {
@@ -449,20 +374,20 @@ function forQuestionsAndAnswers() {
 
 
 
-var setTimeOut2;
-var setTimeOut3;
-var setTimeOut4;
-var setTimeOut5;
+let setTimeOut2;
+let setTimeOut3;
+let setTimeOut4;
+let setTimeOut5;
 
-var score = 0;
+let score = 0;
 
-var getResultDiv = document.getElementById("third-main-div-eighth-div");
-var getH4TagForResult = document.getElementById("h4-id1-for-result");
-var getH2TagForResult = document.getElementById("h2-id1-for-result");
+let getResultDiv = document.getElementById("third-main-div-eighth-div");
+let getH4TagForResult = document.getElementById("h4-id1-for-result");
+let getH2TagForResult = document.getElementById("h2-id1-for-result");
 
-var getH3TimerIdForAnimation = document.getElementById("h3-timer-id1");
+let getH3TimerIdForAnimation = document.getElementById("h3-timer-id1");
 
-var getResetBtn = document.getElementById("btn-id1-for-reload");
+let getResetBtn = document.getElementById("btn-id1-for-reload");
 
 
 function forNxtClick() {
@@ -672,11 +597,11 @@ function forNxtClick() {
 forNxtClick();
 
 
-var getOptionsClass = document.getElementsByClassName("div-class-for-options");
+let getOptionsClass = document.getElementsByClassName("div-class-for-options");
 
-var getBoldTagClass = document.getElementsByClassName("bold-tag-for-check-class");
+let getBoldTagClass = document.getElementsByClassName("bold-tag-for-check-class");
 
-var getNxtBtn = document.getElementById("nxt-btn-id");
+let getNxtBtn = document.getElementById("nxt-btn-id");
 
 function optionsFunction(optionsSelect) {
 
@@ -750,7 +675,7 @@ function foo3() {
 
 };
 
-for (var k = 0; k < getOptionsClass.length; k++) {
+for (let k = 0; k < getOptionsClass.length; k++) {
 
     getOptionsClass[k].addEventListener("click", foo3);
 
