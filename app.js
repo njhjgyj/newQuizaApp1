@@ -55,7 +55,9 @@ let quizObject = [
 
     {
 
-        Questions1: " Q: Which of these is the same as result += value? ",
+        Questions1: " Q: Which of these is the same as ",
+        Questions2: " result += value? ",
+        Questions3: "  ",
         Answers1: " d)    result = result + value  ",
         Answers2: " &#10003 ",    // correct
         Answers3: " &#10007 ",    // wrong
@@ -120,14 +122,22 @@ let time2 = 20;
 
 let count1 = 0;
 
+let newTime1;
+
+let newTime2 = 120;
+
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
     while (currentIndex != 0) {
 
         // Pick a remaining element.
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
+
+        // And swap it with the current element.
         [array[currentIndex], array[randomIndex]] = [
             array[randomIndex], array[currentIndex]];
     }
@@ -151,20 +161,31 @@ let elem = document.documentElement;
 getBtnId.addEventListener("click", () => {
 
     getMainDivId1.style.display = "none";
-    getAnimationDiv.style.display = "block";
+    // getAnimationDiv.style.display = "block";
+    getAnimAndRefDiv.style.display = "flex";
 
+    alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
 
+    setInterval(() => {
+
+        timeForRef--;
+
+        getrefDivId.innerHTML = timeForRef;
+
+    }, 1000);
 
     setTimeout(() => {
 
-        getAnimationDiv.style.display = "none";
+        getAnimAndRefDiv.style.display = "none";
         getMainDivId2.style.display = "block";
 
         forTime();
 
         forSetTimeOutAndClearInterval();
 
-    }, 12100);
+    // }, 12100);
+    }, 120000);
+
 
     // Used like so
     shuffle(quizObject);
@@ -190,8 +211,103 @@ getBtnId.addEventListener("click", () => {
 
     };
 
-
 });
+
+
+
+
+let getAnimAndRefDiv = document.getElementById("div-for-animation-and-refresh-id");
+
+let getrefDivId = document.getElementById("refresh-div-id");
+
+let timeForRef = 120;
+
+function forRefresh() {
+
+    // if (window.performance.navigation.type == 1 && sessionStorage.key(1) && count1 == 0) {
+
+    //     console.log("The page is reload");
+    
+    //     getMainDivId1.style.display = "none";
+    //     getAnimationDiv.style.display = "block";
+    
+    //     setTimeoutForIfUserResfreshPage = setTimeout(() => {
+    
+    //         getAnimationDiv.style.display = "none";
+    //         getMainDivId2.style.display = "block";
+    
+    //         alert(" Welcome back " + sessionStorage.getItem(" User Name "));
+    
+    //         shuffle(quizObject);
+    
+    //         forTime();
+    
+    //         forSetTimeOutAndClearInterval();
+    
+    //         forQuestionsAndAnswers();
+    
+    //     }, 12100);
+    
+    
+    //     window.onbeforeunload = function () {
+    
+    //         return "Are you sure you want reload that page";
+    
+    //     };
+    
+    // }
+
+
+
+
+
+    if (window.performance.navigation.type == 1 && sessionStorage.key(1) && count1 == 0) {
+
+        console.log("The page is reload");
+    
+        getMainDivId1.style.display = "none";
+        // getAnimationDiv.style.display = "block";
+        getAnimAndRefDiv.style.display = "flex";
+
+        setInterval(() => {
+            
+            timeForRef--;
+
+            getrefDivId.innerHTML = timeForRef;
+
+        }, 1000);
+    
+        setTimeoutForIfUserResfreshPage = setTimeout(() => {
+    
+            getAnimAndRefDiv.style.display = "none";
+            getMainDivId2.style.display = "block";
+    
+            alert(" Welcome back " + sessionStorage.getItem(" User Name "));
+    
+            shuffle(quizObject);
+    
+            forTime();
+    
+            forSetTimeOutAndClearInterval();
+    
+            forQuestionsAndAnswers();
+
+        // }, 12100);
+        }, 120000);
+    
+    
+        window.onbeforeunload = function () {
+    
+            return "Are you sure you want reload that page";
+    
+        };
+    
+    }
+
+};
+
+
+
 
 let getResultDivForIfUserMinimizeScreen = document.getElementById("third-main-div-eighth-div");
 
@@ -199,38 +315,7 @@ let setTimeoutForIfUserResfreshPage;
 
 console.log(window.performance.navigation);    //PerformanceNavigation {type: 1, redirectCount: 0}
 
-if (window.performance.navigation.type == 1 && sessionStorage.key(1) && count1 == 0) {
-
-    console.log("The page is reload");
-
-
-    getMainDivId1.style.display = "none";
-    getAnimationDiv.style.display = "block";
-
-    setTimeoutForIfUserResfreshPage = setTimeout(() => {
-
-        getAnimationDiv.style.display = "none";
-        getMainDivId2.style.display = "block";
-
-        alert(" Welcome back " + sessionStorage.getItem(" User Name "));
-
-        shuffle(quizObject);
-
-        forTime();
-
-        forSetTimeOutAndClearInterval();
-
-        forQuestionsAndAnswers();
-
-    }, 12100);
-
-    window.onbeforeunload = function () {
-
-        return "Are you sure you want reload that page";
-
-    };
-
-}
+forRefresh();
 
 
 function forTime() {
@@ -302,6 +387,8 @@ let getH2TagForResult = document.getElementById("h2-id1-for-result");
 
 let getH3TimerIdForAnimation = document.getElementById("h3-timer-id1");
 
+let getResetBtn = document.getElementById("btn-id1-for-reload");
+
 
 function forNxtClick() {
     getNxtBtnForNxtClick.addEventListener("click", () => {
@@ -324,6 +411,8 @@ function forNxtClick() {
 
             getMainDivId2.style.display = "none";
 
+            // getResetBtn.disabled = true;
+
             getH4TagForResult.innerHTML = " You complete that quiz and you score " + score + " out of " + quizObject.length + " ";
 
             if (score < 3) {
@@ -337,6 +426,10 @@ function forNxtClick() {
                 getH2TagForResult.innerHTML = " Congratulations ";
 
             };
+
+            localStorage.setItem(" Score ", score);
+
+            console.log("This is localstorage score", localStorage.getItem(" Score "));
 
         };
 
@@ -487,6 +580,9 @@ function forNxtClick() {
         };
 
         for (let i = 0; i < getOptionsClass.length; i++) {
+
+            // getOptionsClass[i].style.backgroundColor = "rgb(102, 153, 153)";
+
             getOptionsClass[i].lastChild.previousSibling.style.visibility = "hidden";
             getOptionsClass[i].style.backgroundColor = "inherit";
 
@@ -508,11 +604,17 @@ let getBoldTagClass = document.getElementsByClassName("bold-tag-for-check-class"
 let getNxtBtn = document.getElementById("nxt-btn-id");
 
 function optionsFunction(optionsSelect) {
+
+    // console.log(" this is optionsFunction " + optionsSelect.lastChild.nextSibling.textContent);
     console.log(" this is optionsFunction " + optionsSelect.lastChild.previousSibling.textContent);
 
     for (let i = 0; i < getOptionsClass.length; i++) {
 
         getOptionsClass[i].classList.add("removeEvent");
+
+        // console.log(getOptionsClass[i].firstChild.nextSibling.textContent);
+        // console.log(getOptionsClass[i].lastChild.previousSibling.textContent);
+
     };
 
     getH3TimerIdForAnimation.style.animationDuration = "0.2s";
@@ -576,5 +678,14 @@ function foo3() {
 for (let k = 0; k < getOptionsClass.length; k++) {
 
     getOptionsClass[k].addEventListener("click", foo3);
+
+};
+
+
+function foo5() {
+
+    alert(" Hey " + sessionStorage.getItem(" User Name ") + " Wait up to 2 Minutes ");
+
+    location.reload();
 
 };
