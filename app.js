@@ -172,67 +172,9 @@ if (input1.value.trim().length > 2) {
 
 var elem = document.documentElement;
 
-// getBtnId.addEventListener("click", () => {
+ getBtnId.addEventListener("click", () => {
 
-//     getMainDivId1.style.display = "none";
-    // getAnimationDiv.style.display = "block";
-//     getAnimAndRefDiv.style.display = "flex";
-
-//     alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
-
-//     setInterval(() => {
-
-//         timeForRef--;
-
-//         getrefDivId.innerHTML = timeForRef;
-
-//     }, 1000);
-
-//     setTimeout(() => {
-
-//         getAnimAndRefDiv.style.display = "none";
-//         getMainDivId2.style.display = "block";
-
-//         forTime();
-
-//         forSetTimeOutAndClearInterval();
-
-    // }, 12100);
-//     }, 120000);
-
-
-    // Used like so
-//     shuffle(quizObject);
-
-
-//     forQuestionsAndAnswers();
-
-
-//     sessionStorage.setItem(" User Name ", getInpId.value.trim());
-//     console.log(sessionStorage.getItem(" User Name "));
-
-//     if (elem.requestFullscreen) {
-
-//         elem.requestFullscreen();
-
-//     } else if (elem.webkitRequestFullscreen) { /* Safari */
-
-//         elem.webkitRequestFullscreen();
-
-//     } else if (elem.msRequestFullscreen) { /* IE11 */
-
-//         elem.msRequestFullscreen();
-
-//     };
-
-// });
-
-
-
-
-function btnForStartQuiz() {
-
-getMainDivId1.style.display = "none";
+     getMainDivId1.style.display = "none";
     // getAnimationDiv.style.display = "block";
      getAnimAndRefDiv.style.display = "flex";
 
@@ -285,7 +227,65 @@ getMainDivId1.style.display = "none";
 
  });
 
-};
+
+
+
+// function btnForStartQuiz() {
+
+// getMainDivId1.style.display = "none";
+    // getAnimationDiv.style.display = "block";
+//      getAnimAndRefDiv.style.display = "flex";
+
+//      alert("Note: Every time you reset your page then you need to wate upto 2 minutes ");
+
+//      setInterval(() => {
+
+//          timeForRef--;
+
+//          getrefDivId.innerHTML = timeForRef;
+
+     }, 1000);
+// 
+//      setTimeout(() => {
+
+//          getAnimAndRefDiv.style.display = "none";
+//          getMainDivId2.style.display = "block";
+
+//          forTime();
+
+//          forSetTimeOutAndClearInterval();
+
+    // }, 12100);
+//      }, 120000);
+
+
+    // Used like so
+//      shuffle(quizObject);
+
+
+//      forQuestionsAndAnswers();
+
+
+//      sessionStorage.setItem(" User Name ", getInpId.value.trim());
+//      console.log(sessionStorage.getItem(" User Name "));
+
+//      if (elem.requestFullscreen) {
+
+//          elem.requestFullscreen();
+
+//      } else if (elem.webkitRequestFullscreen) { /* Safari */
+
+//          elem.webkitRequestFullscreen();
+
+//      } else if (elem.msRequestFullscreen) { /* IE11 */
+
+//          elem.msRequestFullscreen();
+
+//      };
+
+//  });
+
+// };
 
 
 
