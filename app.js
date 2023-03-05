@@ -197,19 +197,19 @@ getBtnId.addEventListener("click", () => {
     sessionStorage.setItem(" User Name ", getInpId.value.trim());
     console.log(sessionStorage.getItem(" User Name "));
 
-    // if (elem.requestFullscreen) {
+     if (elem.requestFullscreen) {
 
-        // elem.requestFullscreen();
+         elem.requestFullscreen();
 
-    // } else if (elem.webkitRequestFullscreen) { /* Safari */
+     } else if (elem.webkitRequestFullscreen) { /* Safari */
 
-        // elem.webkitRequestFullscreen();
+         elem.webkitRequestFullscreen();
 
-    // } else if (elem.msRequestFullscreen) { /* IE11 */
+     } else if (elem.msRequestFullscreen) { /* IE11 */
 
-        // elem.msRequestFullscreen();
+         elem.msRequestFullscreen();
 
-    // };
+     };
 
 });
 
