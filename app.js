@@ -1,3 +1,6 @@
+"use strict";
+
+
 let quizObject = [
 
     {
@@ -191,11 +194,8 @@ getBtnId.addEventListener("click", () => {
     forQuestionsAndAnswers();
 
 
-    // sessionStorage.setItem(" User Name ", getInpId.value.trim());
-    // console.log(sessionStorage.getItem(" User Name "));
-    
-    localStorage.setItem(" User Name ", getInpId.value.trim());
-    console.log(localStorage.getItem(" User Name "));
+    sessionStorage.setItem(" User Name ", getInpId.value.trim());
+    console.log(sessionStorage.getItem(" User Name "));
 
     if (elem.requestFullscreen) {
 
@@ -282,9 +282,7 @@ function forRefresh() {
             getAnimAndRefDiv.style.display = "none";
             getMainDivId2.style.display = "block";
     
-            // alert(" Welcome back " + sessionStorage.getItem(" User Name "));
-            
-            alert(" Welcome back " + localStorage.getItem(" User Name "));
+            alert(" Welcome back " + sessionStorage.getItem(" User Name "));
     
             shuffle(quizObject);
     
@@ -686,7 +684,7 @@ for (let k = 0; k < getOptionsClass.length; k++) {
 
 function foo5() {
 
-    alert(" Hey " + localStorage.getItem(" User Name ") + " Wait up to 2 Minutes ");
+    alert(" Hey " + sessionStorage.getItem(" User Name ") + " Wait up to 2 Minutes ");
 
     location.reload();
 
